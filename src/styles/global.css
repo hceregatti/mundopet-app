@@ -1,0 +1,82 @@
+/* global */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  /* -webkit-font-smoothing: antialiased; */
+  background: var(--background-primary);
+  color: var(--content-secondary);
+}
+
+:root {
+  /* Variables */
+  /* Colors */
+
+  --content-primary: #ffffff;
+  --content-secondary: #98959d;
+  --content-tertiary: #666666;
+  --content-brand: #9282fa;
+
+  --background-primary: #151515;
+  --background-secondary: #1e1e1e;
+  --background-tertiary: #23242c;
+  --background-brand: #9282fa;
+  --background-highlights: #bdb4fa;
+
+  --border-primary: #3e3c41;
+  --border-secondary: #86818c;
+  --border-brand: #9282fa;
+  --border-divisor: #353339;
+
+  /* Fonts */
+
+  --ff-inter-tight: "Inter Tight", sans-serif;
+  --ff-inter: "Inter", sans-serif;
+
+  --title: 700 1.5rem/2 var(--ff-inter-tight);
+
+  --paragraph-md: 500 0.875rem/1.5 var(--ff-inter);
+  --paragraph-sm: 500 0.75rem/1 var(--ff-inter);
+  --label-lg: 700 1rem/1.5 var(--ff-inter);
+  --label-md: 700 0.875rem/1.5 var(--ff-inter);
+  --label-sm: 700 0.75rem/1 var(--ff-inter);
+  --link: 500 0.75rem/1 var(--ff-inter);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3125rem;
+}
+
+input,
+textarea {
+  max-width: 100%;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border-primary);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+  opacity: 0;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator{
+  opacity: 0;
+}
+
+input[type="date"] {
+  text-transform: uppercase;
+}
+
+.active {
+  filter: blur(5px);
+}
+
+.hidden {
+  display: none;
+}

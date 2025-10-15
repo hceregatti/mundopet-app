@@ -1,0 +1,406 @@
+.container {
+  --max-width: 390px;
+  width: min(var(--max-width), 100% - 1.25rem * 2);
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  justify-content: center;
+  position: relative;
+}
+
+& section {
+  max-width: fit-content;
+  margin: auto;
+  padding-block: 0.75rem;
+  transition: all 200ms ease-in-out;
+  & header {
+    display: flex;
+    flex-direction: column;
+
+    & div {
+      margin-bottom: 0.75rem;
+      & h1 {
+        font: var(--title);
+        color: var(--content-primary);
+      }
+      & span {
+        font: var(--paragraph-md);
+      }
+    }
+
+    & #dateShow {
+      width: fit-content;
+      height: fit-content;
+      border-radius: 0.5rem;
+      padding: 0.75rem 2.5rem;
+      border: 1px solid var(--border-primary);
+      background-color: transparent;
+      font: 400 1rem/1.5 var(--ff-inter);
+      text-transform: uppercase;
+      color: var(--content-secondary);
+      outline: none;
+      transition: border 200ms ease-in-out;
+
+      position: relative;
+
+      &:hover {
+        border: 1px solid var(--border-secondary);
+      }
+
+      &:focus {
+        border: 1px solid var(--border-brand);
+        color: var(--content-primary);
+      }
+    }
+
+    & #dateShow::before {
+      content: url(/src/assets/icons/calendar.svg);
+      position: absolute;
+      top: 55%;
+      transform: translateY(-50%);
+      left: 0.75rem;
+    }
+
+    & #dateShow::after {
+      content: url(/src/assets/icons/arrow.svg);
+      position: absolute;
+      top: 55%;
+      right: 0;
+      padding-right: .75rem;
+      transform: translateY(-50%);
+
+    }
+  }
+
+  & ul[role="list"] {
+    margin-top: 2rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    width: 100%;
+    height: 60dvh;
+    border-radius: .5rem;
+
+    & .title {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      background: #2e2c30;
+      border-radius: 0.5rem 0.5rem 0 0;
+      border-bottom: 1px solid var(--border-divisor);
+
+      & div {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        & h2 {
+          font: var(--label-lg);
+          color: var(--content-primary);
+        }
+      }
+
+      & h2 {
+        font: var(--label-lg);
+      }
+    }
+
+    & #morning {
+      background: #2e2c30;
+      padding: 1.25rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+
+      & .schedules {
+        list-style: none;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        & div {
+          display: flex;
+          gap: 0.75rem;
+          & h3 {
+            font: var(--label-md);
+            color: var(--content-primary);
+          }
+
+          & span {
+            font: var(--label-md);
+            color: var(--content-primary);
+
+            & small {
+              font: var(--paragraph-md);
+              color: var(--content-secondary);
+            }
+          }
+        }
+        & span {
+          font: var(--paragraph-md);
+          color: var(--content-secondary);
+        }
+
+        & button {
+          border: none;
+          background: none;
+          font: var(--paragraph-sm);
+          color: var(--content-tertiary);
+          cursor: pointer;
+
+          align-self: flex-end;
+          margin-top: 1rem;
+
+          &:hover {
+            color: var(--content-primary);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    & #afternoon {
+      background: #2e2c30;
+      padding: 1.25rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+
+      & .schedules {
+        list-style: none;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+
+        & div {
+          display: flex;
+          gap: 0.75rem;
+          & h3 {
+            font: var(--label-md);
+            color: var(--content-primary);
+          }
+
+          & span {
+            font: var(--label-md);
+            color: var(--content-primary);
+
+            & small {
+              font: var(--paragraph-md);
+              color: var(--content-secondary);
+            }
+          }
+        }
+        & span {
+          font: var(--paragraph-md);
+          color: var(--content-secondary);
+        }
+
+        & button {
+          border: none;
+          background: none;
+          font: var(--paragraph-sm);
+          color: var(--content-tertiary);
+          cursor: pointer;
+
+          align-self: flex-end;
+          margin-top: 1rem;
+
+          &:hover {
+            color: var(--content-primary);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    & #night {
+      background: #2e2c30;
+      padding: 1.25rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+
+      & .schedules {
+        list-style: none;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+
+        & div {
+          display: flex;
+          gap: 0.75rem;
+          & h3 {
+            font: var(--label-md);
+            color: var(--content-primary);
+          }
+
+          & span {
+            font: var(--label-md);
+            color: var(--content-primary);
+
+            & small {
+              font: var(--paragraph-md);
+              color: var(--content-secondary);
+            }
+          }
+        }
+        & span {
+          font: var(--paragraph-md);
+          color: var(--content-secondary);
+        }
+
+        & button {
+          border: none;
+          background: none;
+          font: var(--paragraph-sm);
+          color: var(--content-tertiary);
+          cursor: pointer;
+
+          align-self: flex-end;
+          margin-top: 1rem;
+
+          &:hover {
+            color: var(--content-primary);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  & ul[role="list"]::-webkit-scrollbar {
+    width: 6px;
+    height: 100%;
+  }
+
+  & ul[role="list"]::-webkit-scrollbar-track {
+    background: var(--border-secondary);
+    border-radius: 1rem;
+  }
+
+  & ul[role="list"]::-webkit-scrollbar-thumb {
+    background: var(--content-brand);
+    border-radius: 1rem;
+  }
+
+  & ul[role="list"]::-webkit-scrollbar-thumb:hover {
+    background: #bdb4fa;
+  }
+}
+
+& li + li {
+  border-top: 1px solid var(--border-divisor);
+  & div {
+    padding-block: 0.5rem;
+  }
+}
+
+& div + .title {
+  margin-top: 0.75rem;
+}
+
+& div#schedules {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+
+  & .btn-schedule {
+    font: var(--label-lg);
+    text-transform: uppercase;
+    color: #050505;
+
+    background: var(--content-brand);
+    width: fit-content;
+    height: fit-content;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+
+    &:hover {
+      background: var(--background-highlights);
+    }
+  }
+}
+
+@media (width >= 80rem) {
+  .container {
+    --max-width: 80rem;
+    width: min(var(--max-width), 100% - 5rem * 2);
+  }
+
+  section {
+    max-width: 45rem;
+    & header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & ul[role="list"] {
+      & #morning {
+        display: flex;
+        flex-direction: column;
+
+        & .schedules {
+          flex-direction: row;
+          align-items: center;
+          padding-block: 0.75rem;
+          justify-content: space-between;
+
+          & button {
+            align-self: center;
+            margin-top: 0;
+          }
+        }
+      }
+
+      & #afternoon {
+        display: flex;
+        flex-direction: column;
+
+        & .schedules {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          & button {
+            align-self: center;
+            margin-top: 0;
+          }
+        }
+      }
+
+      & #night {
+        display: flex;
+        flex-direction: column;
+
+        & .schedules {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          & button {
+            align-self: center;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  & div#schedules {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    & .btn-schedule {
+      font: var(--label-lg);
+      text-transform: uppercase;
+      color: #050505;
+
+      background: var(--content-brand);
+      width: fit-content;
+      height: fit-content;
+      border: 0;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.5rem;
+
+      position: fixed;
+      bottom: 1rem;
+      right: 2rem;
+    }
+  }
+}

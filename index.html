@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundo Pet</title>
+
+    <link rel="stylesheet" href="/src/styles/index.css" />
+  </head>
+  <body>
+    <img src="/src/assets/logo-app.svg" alt="Logo Mundo Pet" />
+
+    <main class="container">
+      <section id="schedule">
+        <header>
+          <div>
+            <h1>Sua agenda</h1>
+            <span
+              >Aqui você pode ver todos os clientes e serviços agendados para
+              hoje.</span
+            >
+          </div>
+          <input type="date" name="dateShow" id="dateShow" />
+        </header>
+
+        <ul role="list">
+          <li class="title">
+            <div>
+              <img src="/src/assets/icons/blue-sun.svg" alt="" />
+              <h2>Manhã</h2>
+            </div>
+            <h2>08h-12h</h2>
+          </li>
+
+          <div id="morning">
+            <!-- <li class="schedules">
+              <div>
+                <h3>09:00</h3>
+                <span>
+                  Thor
+                  <small>/ Fernanda Costa</small>
+                </span>
+              </div>
+              <span>Vacinação</span>
+              <button class="remove">Remover agendamentos</button>
+            </li> -->
+          </div>
+
+          <li class="title">
+            <div>
+              <img src="/src/assets/icons/cloud-sun.svg" alt="" />
+              <h2>Tarde</h2>
+            </div>
+            <h2>13h-18h</h2>
+          </li>
+
+          <div id="afternoon">
+            
+          </div>
+
+          <li class="title">
+            <div>
+              <img src="/src/assets/icons/moon-star.svg" alt="" />
+              <h2>Noite</h2>
+            </div>
+            <h2>19h-21h</h2>
+          </li>
+
+          <div id="night">
+          
+          </div>
+        </ul>
+      </section>
+      <div id="schedules">
+        <button class="btn-schedule" id="btn-schedule">Novo agendamento</button>
+      </div>
+
+      <form method="post" class="hidden">
+        <fieldset>
+          <button class="btn-close" id="btn-close">
+            <img src="/src/assets/icons/close.svg" alt="" />
+          </button>
+          <h1>Agende um atendimento</h1>
+          <span>Preencha os dados do cliente para realizar o agendamento:</span>
+
+          <div class="input-wrapper input-client">
+            <label for="client">Nome do tutor</label>
+            <input
+              type="text"
+              name="client"
+              id="client"
+              placeholder="Helena Souza"
+            />
+          </div>
+          <div class="input-wrapper input-pet">
+            <label for="pet">Nome do pet</label>
+            <input type="text" name="pet" id="pet" placeholder="Cheddar" />
+          </div>
+          <div class="input-wrapper input-phone">
+            <label for="phone">Telefone</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="(00) 0 0000-0000"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="service">Descrição do serviço</label>
+            <textarea
+              name="service"
+              id="service"
+              cols="10"
+              rows="5"
+              placeholder="Banho e tosa"
+            ></textarea>
+          </div>
+
+          <div class="wrapper">
+            <div class="input-wrapper input-date">
+              <label for="dateSchedule">Data</label>
+              <input type="date" name="dateSchedule" id="dateSchedule" />
+            </div>
+
+            <div class="input-wrapper input-hour" id="inputHour">
+              <label for="hourSchedule">Hora</label>
+              <input type="text" name="hourSchedule" id="hourSchedule" list="hourList" />
+              <datalist id="hourList"></datalist>
+            </div>
+          </div>
+        </fieldset>
+        <button type="submit" id="newSchedule">Agendar</button>
+      </form>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
